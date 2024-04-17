@@ -27,7 +27,7 @@ export default createRuntime({
         >
       >(({ use, css }) => {
         const [severity, setSeverity] = use("props.severity");
-        console.log("severity", severity());
+
         if (!severity()) {
           setSeverity("informational");
         }
