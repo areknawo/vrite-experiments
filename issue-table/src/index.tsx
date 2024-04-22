@@ -23,7 +23,7 @@ export default createRuntime({
       view: createView<
         ExtensionElementViewContext<
           Config,
-          { severity: "informational" | "low" | "medium" | "high" }
+          { severity: "informational" | "low" | "medium" | "high" | "governance" }
         >
       >(({ use, css }) => {
         const [severity, setSeverity] = use("props.severity");
@@ -67,7 +67,7 @@ export default createRuntime({
                         { label: "Low", value: "low" },
                         { label: "Medium", value: "medium" },
                         { label: "High", value: "high" },
-                        { label: "Critical", value: "critical" },
+                        { label: "Governance", value: "governance" },
                       ]}
                     />
                   </Components.View>
@@ -87,12 +87,24 @@ export default createRuntime({
               </Components.Element>
               <Components.Element type="Recommendation">
                 <Components.View
-                  class={css`flex items-start py-2 border-gray-200 dark:border-gray-700 rounded-b-2xl`}
+                  class={css`flex items-start border-b-2 py-2 border-gray-200 dark:border-gray-700`}
                 >
                   <Components.View
                     class={css`text-gray-500 dark:text-gray-400 mr-1 font-bold text-base h-[35px] font-mono min-w-40 px-2 inline-flex items-center`}
                   >
                     Recommendation
+                  </Components.View>
+                  <Components.Content />
+                </Components.View>
+              </Components.Element>
+              <Components.Element type="Resolution">
+                <Components.View
+                  class={css`flex items-start py-2 border-gray-200 dark:border-gray-700 rounded-b-2xl`}
+                >
+                  <Components.View
+                    class={css`text-gray-500 dark:text-gray-400 mr-1 font-bold text-base h-[35px] font-mono min-w-40 px-2 inline-flex items-center`}
+                  >
+                    Resolution
                   </Components.View>
                   <Components.Content />
                 </Components.View>
