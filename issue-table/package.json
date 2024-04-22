@@ -19,6 +19,6 @@
     "@vrite/sdk": "^0.4.2"
   },
   "devDependencies": {
-    "@vrite/cli": "^0.0.6"
+    "@vrite/cli": "^0.0.7"
   }
 }
