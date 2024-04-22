@@ -19,7 +19,7 @@ type Config = {};
 export default createRuntime({
   elements: [
     {
-      type: "Audit",
+      type: "Contract",
       view: createView<
         ExtensionElementViewContext<
           Config,
@@ -48,6 +48,11 @@ export default createRuntime({
                 <Components.View
                   class={css`flex items-start border-b-2 py-2 border-gray-200 dark:border-gray-700`}
                 >
+                   <Components.View
+                    class={css`mr-1 text-gray-500 dark:text-gray-400 font-bold text-base h-[35px] font-mono min-w-40 px-2 inline-flex items-center`}
+                  >
+                    Issues
+                  </Components.View>
                   <Components.Content />
                 </Components.View>
               </Components.Element>
