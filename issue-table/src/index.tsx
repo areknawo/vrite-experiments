@@ -19,6 +19,44 @@ type Config = {};
 export default createRuntime({
   elements: [
     {
+      type: "Audit",
+      view: createView<
+        ExtensionElementViewContext<
+          Config,
+          { severity: "informational" | "low" | "medium" | "high" | "governance" }
+        >
+      >(({ use, css }) => {
+        const [severity, setSeverity] = use("props.severity");
+
+        if (!severity()) {
+          setSeverity("informational");
+        }
+
+        return (
+          <Components.View
+            class={css`flex flex-col items-center justify-start m-0 my-4 rounded-2xl border-2 border-gray-200 dark:border-gray-700`}
+          >
+            <Components.Content>
+              <Components.Element type="Title">
+                <Components.View
+                  class={css`flex items-start border-b-2 border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 rounded-t-2xl`}
+                >
+                  <Components.Content allowed={["paragraph"]} />
+                </Components.View>
+              </Components.Element>
+              <Components.Element type="Issues">
+                <Components.View
+                  class={css`flex items-start border-b-2 py-2 border-gray-200 dark:border-gray-700`}
+                >
+                  <Components.Content />
+                </Components.View>
+              </Components.Element>
+            </Components.Content>
+          </Components.View>
+        );
+      })
+    },
+    {
       type: "Issue",
       view: createView<
         ExtensionElementViewContext<
