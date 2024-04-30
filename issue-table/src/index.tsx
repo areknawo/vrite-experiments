@@ -19,6 +19,55 @@ type Config = {};
 export default createRuntime({
   elements: [
     {
+      type: "Audit",
+      view: createView<
+        ExtensionElementViewContext<
+          Config
+        >
+      >(({ use, css }) => {
+        return (
+          <Components.View
+            class={css`items-center justify-start p-2 m-0 my-4 border-b-2 border-gray-200 dark:border-gray-700`}
+          >
+            <Components.Content>
+              <Components.Element type="Title">
+                <Components.View class={css`border-b-2 border-gray-200 dark:border-gray-700`}
+
+                >
+                  <Components.Content allowed={["heading"]} />
+                </Components.View>
+              </Components.Element>
+              <Components.Element type="Scope">
+                <Components.View
+                  class={css``}
+                >
+                   <Components.View
+                    class={css`mr-1 text-gray-500 dark:text-gray-400 font-bold text-base h-[35px] font-mono min-w-40`}
+                  >
+                    Scope
+                  </Components.View>
+                  <Components.Content/>
+                </Components.View>
+              </Components.Element>
+
+              <Components.Element type="Contracts">
+                <Components.View
+                  class={css``}
+                >
+                   <Components.View
+                    class={css`mr-1 text-gray-500 dark:text-gray-400 font-bold text-base h-[35px] font-mono min-w-40`}
+                  >
+                    Contracts
+                  </Components.View>
+                  <Components.Content />
+                </Components.View>
+              </Components.Element>
+            </Components.Content>
+          </Components.View>
+        );
+      })
+    },
+    {
       type: "Contract",
       view: createView<
         ExtensionElementViewContext<
@@ -35,6 +84,18 @@ export default createRuntime({
                   class={css`items-start p-4 border-b-2 border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 rounded-t-2xl`}
                 >
                   <Components.Content allowed={["paragraph"]} />
+                </Components.View>
+              </Components.Element>
+              <Components.Element type="Description">
+                <Components.View
+                  class={css`border-b-2 p-4 border-gray-200 dark:border-gray-700`}
+                >
+                   <Components.View
+                    class={css`mr-1 text-gray-500 dark:text-gray-400 font-bold text-base h-[35px] font-mono min-w-40 inline-flex items-center`}
+                  >
+                    Description
+                  </Components.View>
+                  <Components.Content/>
                 </Components.View>
               </Components.Element>
               <Components.Element type="PrivilegedFunctions">
