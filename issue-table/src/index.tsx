@@ -32,21 +32,37 @@ export default createRuntime({
             <Components.Content>
               <Components.Element type="Title">
                 <Components.View class={css`border-b-2 border-gray-200 dark:border-gray-700`}
-
                 >
                   <Components.Content allowed={["heading"]} />
                 </Components.View>
               </Components.Element>
+
+              <Components.Element type="Metadata">
+                <Components.View>
+                  <Components.Content>
+                    <Components.Element type="Network">
+                      <Components.View>
+                        <Components.View
+                          class={css`mr-1 text-gray-500 dark:text-gray-400 font-bold text-base h-[35px] font-mono min-w-40`}
+                        >
+                          Network
+                        </Components.View>
+                        <Components.Content />
+                      </Components.View>
+                    </Components.Element>
+                  </Components.Content>
+                </Components.View>
+              </Components.Element>
+
               <Components.Element type="Scope">
                 <Components.View
-                  class={css``}
                 >
-                   <Components.View
+                  <Components.View
                     class={css`mr-1 text-gray-500 dark:text-gray-400 font-bold text-base h-[35px] font-mono min-w-40`}
                   >
                     Scope
                   </Components.View>
-                  <Components.Content/>
+                  <Components.Content />
                 </Components.View>
               </Components.Element>
 
@@ -54,7 +70,7 @@ export default createRuntime({
                 <Components.View
                   class={css``}
                 >
-                   <Components.View
+                  <Components.View
                     class={css`mr-1 text-gray-500 dark:text-gray-400 font-bold text-base h-[35px] font-mono min-w-40`}
                   >
                     Contracts
@@ -90,24 +106,24 @@ export default createRuntime({
                 <Components.View
                   class={css`border-b-2 p-4 border-gray-200 dark:border-gray-700`}
                 >
-                   <Components.View
+                  <Components.View
                     class={css`mr-1 text-gray-500 dark:text-gray-400 font-bold text-base h-[35px] font-mono min-w-40 inline-flex items-center`}
                   >
                     Description
                   </Components.View>
-                  <Components.Content/>
+                  <Components.Content />
                 </Components.View>
               </Components.Element>
               <Components.Element type="PrivilegedFunctions">
                 <Components.View
                   class={css`border-b-2 p-4 border-gray-200 dark:border-gray-700`}
                 >
-                   <Components.View
+                  <Components.View
                     class={css`mr-1 text-gray-500 dark:text-gray-400 font-bold text-base h-[35px] font-mono min-w-40 inline-flex items-center`}
                   >
                     Privileged functions
                   </Components.View>
-                  <Components.Content/>
+                  <Components.Content />
                 </Components.View>
               </Components.Element>
 
@@ -115,7 +131,7 @@ export default createRuntime({
                 <Components.View
                   class={css`border-b-2 p-4 border-gray-200 dark:border-gray-700`}
                 >
-                   <Components.View
+                  <Components.View
                     class={css`mr-1 text-gray-500 dark:text-gray-400 font-bold text-base h-[35px] font-mono min-w-40 inline-flex items-center`}
                   >
                     Issues
